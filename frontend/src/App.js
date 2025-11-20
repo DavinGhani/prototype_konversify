@@ -21,7 +21,7 @@ function App() {
 
   // 1. Fetch Data
   useEffect(() => {
-    fetch('https://davin22.pythonanywhere.com/api/customers')
+    fetch('prototypekonversify-production.up.railway.app/api/customers')
       .then(res => res.json())
       .then(data => {
         setAllCustomers(data);
