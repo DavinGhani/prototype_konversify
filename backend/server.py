@@ -18,11 +18,12 @@ except FileNotFoundError:
 @app.route('/api/customers', methods=['GET'])
 def get_customers():
     if data_df.empty:
-        return jsonify([]), 200 
+        return jsonify([]), 200
     
-    df_clean = data_df.fillna('')
-    customers_json = df_clean.to_dict(orient='records')
+    # Mengambil 15000 baris pertama untuk Testing
+    df_sample = data_df.head(15000).fillna('')
+    
+    customers_json = df_sample.to_dict(orient='records')
     return jsonify(customers_json)
-
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

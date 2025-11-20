@@ -189,7 +189,16 @@ function App() {
 
         {/* --- TABEL DATA --- */}
         {isLoading ? (
-          <div className="loading">Memuat data...</div>
+          <div className="loading-container">
+            <div className="spinner"></div>
+            <div className="loading-text">
+              <h3>Sedang Menghubungkan ke Server...</h3>
+              <p>Menyiapkan data nasabah</p>
+              <p style={{fontSize: '0.85rem', marginTop: '15px', color: '#95a5a6'}}>
+                (Mohon tunggu sebentar, jangan refresh halaman)
+              </p>
+            </div>
+          </div>
         ) : (
           <div className="table-container">
             <table className="customer-table">
