@@ -21,7 +21,7 @@ function App() {
 
   // 1. Fetch Data
   useEffect(() => {
-    fetch('https://prototype-konversify-production.up.railway.app/api/customers')
+    fetch('https://prototypekonversify-production.up.railway.app/api/customers')
       .then(res => res.json())
       .then(data => {
         setAllCustomers(data);
