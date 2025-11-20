@@ -1,0 +1,12 @@
+# Abaikan folder sistem React
+node_modules/
+build/
+.DS_Store
+
+# Abaikan folder sistem Python
+venv/
+__pycache__/
+*.pyc
+
+# Abaikan file Environment 
+.env
