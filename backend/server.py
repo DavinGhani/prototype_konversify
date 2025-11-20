@@ -20,9 +20,13 @@ def get_customers():
     if data_df.empty:
         return jsonify([]), 200
     
-    # Mengambil 15000 baris pertama untuk Testing
-    df_sample = data_df.head(15000).fillna('')
+    # Mengambil 15000 data random untuk Testing
+    sample_size = 15000
     
+    if len(data_df) > sample_size:
+        df_sample = data_df.sample(n=sample_size, random_state=42).fillna('')
+    else:
+        df_sample = data_df.fillna('')
     customers_json = df_sample.to_dict(orient='records')
     return jsonify(customers_json)
 if __name__ == '__main__':
