@@ -5,7 +5,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-CSV_FILE = 'Data_Final.csv' 
+CSV_FILE = 'final_data_complete.csv' 
 
 try:
     # Membaca CSV
