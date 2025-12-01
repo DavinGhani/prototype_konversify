@@ -8,7 +8,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // --- STATE UNTUK FILTER ---
+  //  STATE UNTUK FILTER 
   const [filters, setFilters] = useState({
     cluster: 'all',
     job: 'all',
@@ -18,7 +18,7 @@ function App() {
 
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
 
-  // --- STATE BARU: STATUS FOLLOW UP (Simulasi Database Lokal) ---
+  //  STATE BARU: STATUS FOLLOW UP (Simulasi Database Lokal) 
   // Format: { "ID_Nasabah": "Tertarik", "101": "Pending" }
   const [customerStatuses, setCustomerStatuses] = useState({});
 
@@ -70,7 +70,7 @@ function App() {
     });
   }, [allCustomers, filters]);
 
-  // --- LOGIKA BARU: MENGHITUNG STATISTIK (SUMMARY CARDS) ---
+  // MENGHITUNG STATISTIK (SUMMARY CARDS) 
   const stats = useMemo(() => {
     const total = filteredCustomers.length;
     
@@ -80,7 +80,7 @@ function App() {
       return isYes;
     }).length;
 
-    // Hitung VIP (Saldo Tinggi) - sesuaikan string dengan kategori di data Anda
+    // Hitung VIP (Saldo Tinggi) 
     const vip = filteredCustomers.filter(c => {
       const bal = String(c.balance).toLowerCase();
       return bal.includes('tinggi') || bal.includes('vip') || bal.includes('high');
@@ -143,7 +143,7 @@ function App() {
     setSortConfig({ key, direction });
   };
 
-  // --- HANDLER BARU: UBAH STATUS ---
+  //  HANDLER BARU: UBAH STATUS 
   const handleStatusChange = (id, newStatus) => {
     setCustomerStatuses(prev => ({
       ...prev,
@@ -187,7 +187,7 @@ function App() {
       
       <div className="container">
         
-        {/* --- 1. SUMMARY CARDS BARU --- */}
+        {/*  1. SUMMARY CARDS BARU  */}
         <div className="stats-container">
           <div className="stat-card">
             <h3>Total Target</h3>
@@ -211,7 +211,7 @@ function App() {
           </div>
         </div>
 
-        {/* --- PANEL FILTER --- */}
+        {/*  PANEL FILTER  */}
         <div className="filter-panel">
           <div className="filter-group">
             <label>Segmen (Cluster):</label>
@@ -307,7 +307,7 @@ function App() {
                         {row.name}
                       </td>
 
-                      {/* --- INPUT STATUS BARU --- */}
+                      {/*  INPUT STATUS BARU  */}
                       <td className="sticky-col third-col" style={{backgroundColor: getStatusColor(currentStatus)}}>
                         <select 
                           value={currentStatus} 
