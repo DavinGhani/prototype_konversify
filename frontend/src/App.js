@@ -182,7 +182,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Dasbor Prioritas Nasabah</h1>
+        <h1>Dashboard  Nasabah</h1>
       </header>
       
       <div className="container">
